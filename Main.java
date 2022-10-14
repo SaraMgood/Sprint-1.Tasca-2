@@ -1,18 +1,3 @@
-/*Crea una classe anomenada "Producte" amb els atributs nom i preu, i una altra classe anomenada "Venda". 
-Aquesta classe tÈ com a atributs una col∑lecciÛ de productes i el preu total de la venda. OK
-
-La classe "Venda", tÈ un mËtode anomenat calcularTotal() que llanÁa líexcepciÛ personalitzada 
-VendaBuidaException i mostra per pantalla ìPer fer una venda primer has díafegir productesî 
-si la col∑lecciÛ de productes est‡ buida. OK
-
-Si la col∑lecciÛ tÈ productes, llavors ha de recÛrrer la col∑lecciÛ i guardar la suma de tots els preus dels productes 
-a líatribut preu total de la venda.OK?
-
-LíexcepciÛ personalitzada VendaBuidaException ha de ser filla de la classe Exception. Al seu constructor li hem de passar el missatge  
-ìPer fer una venda primer has díafegir productesî i quan capturem líexcepciÛ, líhem de mostrar per pantalla amb el mËtode getMessage() de líexcepciÛ.
-
-Escriu el codi necessari per a generar i capturar una excepciÛ de tipus ArrayIndexOutOfBoundsException.*/
-
 package n1exercici1;
 
 import java.util.ArrayList;
@@ -52,12 +37,12 @@ public class Main {
 
 				break;
 			case 0:
-				System.out.println("AdÈu.");
+				System.out.println("Ad√©u.");
 				
 				break;
 
 			default:
-				System.out.println("Introdueix una acciÛ de les del men˙");
+				System.out.println("Introdueix una acci√≥ de les del men√∫");
 
 			}
 
@@ -65,7 +50,7 @@ public class Main {
 
 	}
 
-	// metodes principals
+	// metodes principals, no necessari per l'exercici 
 	
 	public static void crearProducte() {
 		String nom = funcioInputString("Quin nom rep el producte?");
@@ -114,7 +99,7 @@ public class Main {
 				
 				String resposta = funcioInputString("Quin producte vols comprar? ");
 				int i = 0;
-				while (llistaProductes.size() > i) { // controlar no ens passem de posiciÛ dins l'array ja que el comptador i comenÁa a 0 
+				while (llistaProductes.size() > i) { // controlar no ens passem de posici√≥ dins l'array ja que el comptador i comen√ßa a 0 
 					if (llistaProductes.get(i).getNom().equalsIgnoreCase(resposta)) {//cerca el producte que volem comprar dins llista de productes
 						novaVenda.getLlistaProductes().add(llistaProductes.get(i));  //afegeix producte trobat a la llista de productes dins la llista novaVenda 
 						trobat = true;
@@ -142,50 +127,12 @@ public class Main {
 					
 			}			
 		}
-		/*try {			
-		System.out.println(novaVenda.calcularTotal());		
-		} catch (VendaBuidaException exception) {
-			System.out.println(exception.getMessage());
-			
-		}*/
+		
 }			
-		/*
-		 * boolean trobat=false; while(trobat==false) { if(ll) {
-		 * 
-		 * if(llistaProductes==null){ novaVenda.calcularTotal(); } else if
-		 * (llistaProductes.get(i).getNom().equalsIgnoreCase(resposta)){
-		 * novaVenda.afegirNouProducte(llistaProductes.get(i));
-		 * System.out.println("Total compra: " + novaVenda.calcularTotal());
-		 * trobat=true; } }
-		 * 
-		 * if(!trobat) {
-		 * System.out.println("No s'ha trobat cap producte amb aquest nom. "); }
-		 * novaVenda.calcularTotal();
-		 * 
-		 * try { novaVenda.calcularTotal(); }catch (VendaBuidaException exception){
-		 * System.out.println(exception.getMessage()); }
-		 */
-
-		/*
-		 * public static void comprarProducte() { ArrayList<Producte> productosVenta
-		 * =new ArrayList<Producte>(); Venda nuevaVenta= new Venda(productosVenta);
-		 * boolean finalDeCompra=false; while(finalDeCompra==false){ String resposta =
-		 * funcioInputString("Quin producte vols comprar? Si no vols afegir ningun producte mes posa 'fi' "
-		 * ); if (resposta=="fi"){ finalDeCompra=true; }else{ for (int
-		 * i=0;i<llistaProductes.size()-1;i++){ if
-		 * (llistaProductes.get(i).getNom().equalsIgnoreCase(resposta)){
-		 * nuevaVenta.afegirNouProducte(llistaProductes.get(i)); }else{
-		 * System.out.println("No se ha encontrado un producto con ese nombre"); } } }
-		 * 
-		 * } try { nuevaVenta.calcularTotal(); }catch (VendaBuidaException exception){
-		 * System.out.println(exception.getMessage()); }
-		 */
-
-		// necesitas mostrar la suma total y hacer el try y catch
-
+		
 	
 
-	// mÈtodes ajuda
+	// m√©todes ajuda
 	public static String funcioInputString(String missatge) {
 		System.out.println(missatge);
 		Scanner input = new Scanner(System.in);
